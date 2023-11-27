@@ -1,14 +1,16 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 import { data } from './data';
 import { Post } from './Post';
-// wordPres, php
-//react => virtual dom
 function App() {
+  const queryClient = new QueryClient();
+  const posts = useGetPosts();
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       {data.map((post) => (
         <Post key={post.id} {...post} />
       ))}
-    </>
+    </QueryClientProvider>
   );
 }
 

@@ -8,6 +8,7 @@ interface PostProps {
 }
 
 export const Post: React.FC<PostProps> = ({ id, userId, title, body }) => {
+  const query = useQuery({ queryKey: ['Todos'], queryFn: getTodos });
   return (
     <div>
       <p>{title ?? 'No title is present'}</p>
