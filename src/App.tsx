@@ -4,7 +4,6 @@ import { data } from './data';
 import { Post } from './Post';
 function App() {
   const queryClient = new QueryClient();
-  const posts = useGetPosts();
   return (
     <QueryClientProvider client={queryClient}>
       {data.map((post) => (
